@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biostatistician Course</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #6c3c0c;
+            margin: 0;
+            padding: 0;
+            color: #f0d000;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            color: #f0d000;
+        }
+        h2 {
+            font-size: 2em;
+            color: #f0d000;
+            margin: 20px 0;
+        }
+        .video-link {
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            color: #f0d000;
+            font-size: 1.5em;
+            padding: 15px;
+            background-color: #333;
+            border: 2px solid #f0d000;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            animation: glowing 1.5s infinite alternate;
+        }
+        .video-link:hover {
+            color: #ffffff;
+            background-color: #f0d000;
+            text-decoration: none;
+        }
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+            }
+        }
+        iframe {
+            width: 80%;
+            height: 450px;
+            margin: 20px auto;
+            border: 3px solid #f0d000;
+            border-radius: 10px;
+            display: block;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #f0d000;
+        }
+        footer a {
+            color: #f0d000;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Biostatistician Course</h1>
+    <h2>فيديوهات الدورة</h2>
+    <div id="video-container">
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/AsabOoGRW9w')">الفيديو الأول</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/OkF_c0Am2aw')">الفيديو الثاني</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/RoZ6Dr5pdGM')">الفيديو الثالث</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/EQbLNZovIsI')">الفيديو الرابع</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/uHvyccDmfoQ')">الفيديو الخامس</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/bGbPgST2YDc')">الفيديو السادس</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/Z7OUydwMW-g')">الفيديو السابع</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/46acPOI_Vd0')">الفيديو الثامن</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/EEaBXTguUf8')">الفيديو التاسع</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/UwuH9JeCvyo')">الفيديو العاشر</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/SGXPVy8PYt8')">الفيديو الحادي عشر</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/HZQNIU9jnew')">الفيديو الثاني عشر</div>
+        <div class="video-link" onclick="loadVideo('https://www.youtube.com/embed/HZQNIU9jnew')">الفيديو الثالث عشر</div>
+    </div>
+
+    <footer>
+        <p><a href="https://linktr.ee/Al.hassansaid?utm_source=linktree_profile_share&amp;ltsid=55d34926-f85f-498b-890c-2add173dc402" target="_blank">Programmed by Hassan Said</a></p>
+    </footer>
+
+    <script>
+        let currentIframe = null; // متغير لتخزين الفيديو الحالي المفتوح
+
+        function loadVideo(url) {
+            // إذا كان هناك فيديو مفتوح حاليًا، قم بإغلاقه أولاً
+            if (currentIframe) {
+                currentIframe.remove();
+            }
+
+            // إنشاء iframe جديد
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', url);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.width = '100%';
+            iframe.style.height = '450px';
+            iframe.style.margin = '20px auto';
+            iframe.style.border = '3px solid #f0d000';
+            iframe.style.borderRadius = '10px';
+
+            // إضافة iframe داخل الـ div الذي يحتوي على الفيديو
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.appendChild(iframe);
+
+            // حفظ الفيديو الحالي المفتوح
+            currentIframe = iframe;
+        }
+    </script>
+
+</body></html>
